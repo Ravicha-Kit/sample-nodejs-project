@@ -33,11 +33,17 @@ server.js               # Entry point
    npm install
    ```
 
-2. **Set up environment variables**
+2. **Create Firebase service account file**
+
+   - Go to the [Firebase Console](https://console.firebase.google.com/), open your project, and navigate to Project Settings > Service Accounts.
+   - Click "Generate new private key" and download the JSON file.
+   - Save the file as `src/config/firebase-service-account.json` in your project directory.
+
+3. **Set up environment variables**
 
    - Copy `.env.example` to `.env` and fill in your Firebase credentials and other settings.
 
-3. **Run the server**
+4. **Run the server**
    ```sh
    npm run dev
    ```
