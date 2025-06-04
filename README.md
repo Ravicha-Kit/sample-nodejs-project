@@ -68,6 +68,26 @@ server.js               # Entry point
 - `PUT /api/product/:id` — Update a product
 - `DELETE /api/product/:id` — Delete a product
 
+## Postman Collection & Environment
+
+Postman files are included for easy API testing:
+
+- `postman_collection.json`: Contains all API requests for authentication and product management.
+- `postman_environment.json`: Stores variables like `base_url`, `token`, and `productId` for use in requests and scripts.
+
+**How to use:**
+
+1. Open Postman and click "Import".
+2. Select both `postman_collection.json` and `postman_environment.json` from the project root.
+3. In Postman, select the "Sample Node.js Project Environment" from the environment dropdown.
+4. Use the collection to test authentication and product endpoints. The environment will automatically store your token after login and can be used for product operations.
+
+**Tips:**
+
+- Update the `base_url` variable in the environment to match your running server (e.g., `http://localhost:3000`).
+- The `token` variable is set automatically after a successful login.
+- The `productId` variable can be set manually or via test scripts for chained requests.
+
 ## Notes
 
 - All product endpoints require authentication.
