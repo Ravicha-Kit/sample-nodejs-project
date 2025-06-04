@@ -66,7 +66,3 @@ server.js               # Entry point
 
 - All product endpoints require authentication.
 - Update `.gitignore` to keep sensitive files and build output out of version control.
-
-## License
-
-ISC
