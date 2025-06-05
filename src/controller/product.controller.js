@@ -12,7 +12,10 @@ exports.ProductController =  class ProductController {
     
     static async getAllProducts(req, res) {
         try {
-        const products = await ProductService.getAllProduct(req.user.uid);
+        const whereOptions = {
+            max_price: req.query.max_price,
+        };
+        const products = await ProductService.getAllProduct(req.user.uid, whereOptions);
         res.status(200).json({ data: products });
         } catch (error) {
         res.status(500).json({ error: error.message });

@@ -18,8 +18,15 @@ class ProductService {
         return { id: productRef.id, ...productData };
     }
 
-    static async getAllProduct(userId) {
-        const products = await this.collection().where('userId', '==', userId).get();
+    static async getAllProduct(userId, whereOptions = {}) {
+        let productCondition = this.collection()
+        .where('userId', '==', userId);
+
+        if (whereOptions.max_price) {
+            productCondition = productCondition.where('price', '<=', parseFloat(whereOptions.max_price));
+        }
+
+        const products = await productCondition.get();
         const productList = products.docs.map(item => ({ 
             id: item.id,
             ...item.data(),
