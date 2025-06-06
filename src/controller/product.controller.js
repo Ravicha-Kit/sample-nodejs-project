@@ -4,7 +4,7 @@ exports.ProductController =  class ProductController {
     static async createProduct(req, res) {
         try {
         const product = await ProductService.createProduct(req.body, req.user.uid);
-        res.status(200).json({ productList: product });
+        res.status(200).json({ data: product });
         } catch (error) {
         res.status(500).json({ error: error.message });
         }
